@@ -1,0 +1,103 @@
+<template>
+    <div class="banner">
+        <div class="resize">
+            <div class="resize__container" id="resizeMe">
+                <div class="resize__right-side" @mousedown="mouseDownHandler">
+                    <div class="resize__arrows">
+                        <div class="resize__arrows-text">déplace moi</div>
+                    <div class="resize__arrows-left"> &#129192;</div>
+                    <div class="resize__arrows-right">&#129193;</div>
+                   </div> 
+                </div>
+                <div class="resize__text-left">
+                    <h1 class="banner-title">&lt;<span class="title-1">Hello</span> <span class="title-2">World!</span> /&gt;</h1>
+                    <p>Je suis Pietro Ciccarello,</p>
+                    <p>développeur web front.</p>
+                </div>
+                <div class="resize__function-img">
+                    <img src="../assets/imgs/banner/functionText.png" alt="js function myDay" v-if="percentageWidth > 80">
+                </div>
+            </div>
+            <div class="resize__background">
+                <div class="resize__text-left resize__text-left-back">
+                        <h1 class="banner-title">&lt;<span class="title-1 title-1-back">Hello</span> <span class="title-2 title-2-back">World!</span> /&gt;</h1>
+                        <p>Je suis Pietro Ciccarello,</p>
+                        <p>développeur web front.</p>
+                    </div>
+                <img src="../assets/imgs/banner/Code-typing-bro-transparent-background.svg" alt="computer working">
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default{
+    name:'TheBanner',
+    data(){
+        return{
+            resizeBar: this.$refs.resizeBar,
+            x: 0,
+            w: 0,
+            dx: 0,
+            percentageWidth: 0
+        }
+    },
+    computed:{
+    },
+    mounted(){
+        this.$nextTick(()=>{
+            this.getPercentageBanner();
+            
+            window.addEventListener("resize", ()=>{
+                this.getPercentageBanner();
+            })
+        })
+    },
+    methods:{
+        mouseDownHandler(e){
+            //get current position of the mouse
+            this.x = e.clientX;
+
+            const resizeContainer = document.getElementById('resizeMe');
+            
+            //calculate the dimension of the div
+            const styles = window.getComputedStyle(resizeContainer);
+
+            this.w = parseInt(styles.width, 10);
+
+            
+ 
+            //attach the listner to the document
+            document.addEventListener('mousemove', this.mouseMoveHandler);
+            document.addEventListener('mouseup', this.mouseUpHandler);
+
+            
+        },
+        mouseMoveHandler(e){
+            const resizeContainer = document.getElementById('resizeMe');
+            
+            this.getPercentageBanner();
+            //calculate till where the div can be moved
+            this.dx = e.clientX - this.x;
+
+            //adjust the dimension of the element
+            resizeContainer.style.width = `${this.w + this.dx}px`;
+            
+
+        },
+        mouseUpHandler(){
+            document.removeEventListener('mousemove', this.mouseMoveHandler);
+            document.removeEventListener('mouseup', this.mouseUpHandler)
+        },
+        getPercentageBanner(){
+            const resizeContainer = document.getElementById('resizeMe');
+            const resize = document.querySelector('.resize');
+
+            //calculate percentage of parent div of resize
+            const styles = window.getComputedStyle(resizeContainer);
+            const containerWidth = window.getComputedStyle(resize);
+
+            this.percentageWidth = (parseInt(styles.width, 10) / parseInt(containerWidth.width, 10)) * 100;
+        }
+    }
+}
+</script>

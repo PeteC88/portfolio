@@ -1,0 +1,98 @@
+<template>
+    <section class="menu">
+        <div class="menu-header" :class="{ 'menu-header-is-hidden': !showHeader }">
+            <button class="burger" @click="toggleMenu">
+                <div class="burger__container" :class="{'burger__container--active':burgerActivated,'burger__container--animation': isMenuOn, 'burger__container--animation-reverse': menuAnimationReverse}"></div>
+            </button>
+            <section class="menu-body" :class="isMenuBodyActive ? ['menu-body--active']: ''">
+                <nav class="menu-nav">
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">About </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">Skills </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">Projects </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">API </router-link></li>
+                </nav>
+            </section>
+            <section class="menu-footer" :class="{'menu-footer--active':isMenuFooterActive}">
+                <nav class="menu-footer-nav">
+                    <li :class="{'menu-footer-nav-link--active':isMenuFooterActive}" class="menu-footer-nav-link">
+                        <font-awesome-icon :icon="['fab', 'github']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
+                    </li>
+                    <li :class="{'menu-footer-nav-link--active':isMenuFooterActive}" class="menu-footer-nav-link">
+                        <font-awesome-icon :icon="['fab', 'linkedin']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
+                    </li>
+                </nav>
+                
+                
+            </section>
+        </div>
+    </section>
+   
+</template>
+<script>
+export default{
+    data(){
+        return {
+            isMenuOn:false,
+            menuAnimationReverse:false,
+            burgerActivated: false,
+            isMenuBodyActive:false,
+            isMenuFooterActive:false,
+            showHeader: true,
+            lastScrollPosition:0,
+            scrollOffset:40,
+        }
+    },
+    watch:{
+        isMenuOn(){
+            if(this.isMenuOn){
+                document.documentElement.style.overflow = 'hidden'
+                console.log(document.body.style.overflow)
+                return
+            }else{
+                document.documentElement.style.overflow = 'auto'
+                console.log(document.body.style.overflow)
+            }
+        }
+    },
+    mounted() {
+    this.lastScrollPosition = window.pageYOffset
+    window.addEventListener('scroll', this.onScroll)
+  },
+    methods:{
+        onScroll() {
+            if(!this.isMenuOn){
+                if (window.pageYOffset < 0) {
+                return
+            }  //Math.abs to return the absolute value of the number
+            if (Math.abs(window.pageYOffset - this.lastScrollPosition) < this.scrollOffset) {
+                return
+            }
+                this.showHeader = window.pageYOffset < this.lastScrollPosition
+                this.lastScrollPosition = window.pageYOffset
+            }
+        },
+        toggleMenu(){
+            if(!this.isMenuOn){
+                this.isMenuOn = true;
+                setTimeout(()=>{
+                    this.burgerActivated = true;
+                }, 500)
+            }else{
+                this.menuAnimationReverse = true;
+                setTimeout(()=>{
+                    this.isMenuOn = false;
+                    this.menuAnimationReverse = false;
+                    this.burgerActivated = false;
+                }, 500)
+            }
+            this.isMenuBodyActive = !this.isMenuBodyActive;
+            this.isMenuFooterActive = !this.isMenuFooterActive;
+        }
+    }
+}
+</script>
+<style lang="scss">
+
+
+    
+</style>
