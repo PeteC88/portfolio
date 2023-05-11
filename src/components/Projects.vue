@@ -1,16 +1,22 @@
 <template>
-    <h1> Mes projects</h1>
     <section class="projects">
-        <CardTemplate
-        v-for="card in projectCards"
-        :key="card.id"
-        :cardId="card.id"
-        :siteLink="card.link"
-        :cardImage="card.img"
-        :cardTitle="card.titleFront"
-        @flipCardAction="flipCard(card.id)"
-        :singleCardFlipped="card.isFlipped"
-        />
+        <h1> Mes projets</h1>
+        <div class="projects__cards">
+            <CardTemplate
+            v-for="card in projectCards"
+            :key="card.id"
+            :cardId="card.id"
+            :descriptionFront = "card.descriptionFront"
+            :titleBack="card.titleBack"
+            :languagesUsed="card.languagesUsed"
+            :descriptionBack="card.descriptionBack"
+            :siteLink="card.link"
+            :cardImage="card.img"
+            :cardTitle="card.titleFront"
+            @flipCardAction="flipCard(card.id)"
+            :singleCardFlipped="card.isFlipped"
+            />
+        </div>
     </section>
 </template>
 <script>
