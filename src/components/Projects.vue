@@ -1,11 +1,10 @@
 <template>
-    <div>
-        Mes projects
-    </div>
+    <h1> Mes projects</h1>
     <section class="projects">
         <CardTemplate
         v-for="card in projectCards"
         :key="card.id"
+        :cardId="card.id"
         :siteLink="card.link"
         :cardImage="card.img"
         :cardTitle="card.titleFront"
