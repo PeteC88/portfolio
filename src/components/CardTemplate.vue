@@ -1,18 +1,20 @@
 <template>
     <section>
-        <div class="projects__project card" :class="{'card--flipped' : singleCardFlipped}" @click="flipCardAction">
-            <div class="card__front">
+        <div class="projects__project card" :class="{'card--flipped' : singleCardFlipped}"  @click="flipCardAction">
+            <div class="card__front" :class="classById" >
                 <img :src="cardImageSrc" :alt="cardTitle">
-            <!--   <img src="../assets/imgs/projects/flagsProject.jpg" :alt="cardTitle"> -->
+                <h3>{{ cardTitle }}</h3>
             </div>
             <div class="card__back">Back text Project 1</div>
         </div>
-        <h3>{{ cardTitle }}</h3>
+        <div class="card__instruction">
+            <p>Clique sur la card pour voir plus d'info <span><font-awesome-icon :icon="['fas', 'hand-point-up']" bounce /></span></p>
+        </div>  
     </section>
 </template>
 <script>
 export default{
-    props:['siteLink', 'cardImage','cardTitle', 'singleCardFlipped'],
+    props:['siteLink', 'cardImage','cardTitle', 'singleCardFlipped','cardId'],
     data(){
         return{
             
@@ -21,6 +23,9 @@ export default{
     computed:{
         cardImageSrc(){
             return require(`../assets/imgs/projects/${this.cardImage}`)
+        },
+        classById(){
+            return `card__front-${this.cardId}`;
         }
     },
     methods:{
@@ -31,44 +36,3 @@ export default{
 
 }
 </script>
-<style lang="scss">
-
-.card{
-    position:relative;
-    transform-style: preserve-3d;
-    transition: all 1s ease-in-out;
-
-    &__front{
-        background:green;
-        color:white;
-        position:absolute;
-        width:100%;
-        height:100%;
-        backface-visibility: hidden;
-        text-align: center;
-
-        & img{
-            width: 100%;
-        }
-    }
-
-    &__back{
-        background: blue;
-        color:white;
-        position:absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        transform:rotateY(180deg);
-        text-align: center;
-    }
-
-    &--flipped{
-        transform: rotateY(180deg)
-    }
-
-    
-}
-
-
-</style>
