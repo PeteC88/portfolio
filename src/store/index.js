@@ -48,7 +48,7 @@ export default createStore({
                 },
                 {
                     id: 4,
-                    titleFront: 'Flag of the wordld',
+                    titleFront: 'Flags of the world',
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack:'Flag of the wordld',
                     descriptionBack:'Projet pris sur le site frontendmentor.io',
