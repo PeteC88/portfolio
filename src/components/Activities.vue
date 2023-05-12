@@ -1,7 +1,7 @@
 <template>
     <div class="activity">
         <h1>Moment API</h1>
-        <h5>Que serait un développeur sans les API? Si tu cherches une activité à faire, prend inspiration en cliccant sur le bouton en bas.</h5>
+        <h5>Que serait un développeur sans les API? Si tu cherches une activité à faire, prends inspiration en cliquant sur le bouton en bas.</h5>
         <div class="activity__wrapper">
             <div class="activity__carousel">
                 <div class="activity__slide slide-1 ">
@@ -24,7 +24,7 @@
                     <h3 v-else>Pick one activity</h3>
                 </div>
             </div>
-            <button @click="slideAnimation" :disabled="isSliding">Nouvelle activitée</button>
+            <button @click="slideAnimation" :disabled="isSliding">Nouvelle activité</button>
         </div>
     </div>
 </template>

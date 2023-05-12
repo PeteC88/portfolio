@@ -15,10 +15,16 @@
             <section class="menu-footer" :class="{'menu-footer--active':isMenuFooterActive}">
                 <nav class="menu-footer-nav">
                     <li :class="{'menu-footer-nav-link--active':isMenuFooterActive}" class="menu-footer-nav-link">
+                        <font-awesome-icon :icon="['fab', 'linkedin']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
+                    </li>
+                    <li :class="{'menu-footer-nav-link--active':isMenuFooterActive}" class="menu-footer-nav-link">
+                        <font-awesome-icon :icon="['fas', 'envelope']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
+                    </li>
+                    <li :class="{'menu-footer-nav-link--active':isMenuFooterActive}" class="menu-footer-nav-link">
                         <font-awesome-icon :icon="['fab', 'github']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
                     </li>
                     <li :class="{'menu-footer-nav-link--active':isMenuFooterActive}" class="menu-footer-nav-link">
-                        <font-awesome-icon :icon="['fab', 'linkedin']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
+                        <font-awesome-icon :icon="['fas', 'file-arrow-down']"  class="menu-footer-icon" :class="{'menu-footer-icon--active': isMenuBodyActive}"/>
                     </li>
                 </nav>
                 
