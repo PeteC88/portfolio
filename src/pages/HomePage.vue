@@ -5,6 +5,7 @@
         <Competences />
         <Projects />
         <Activities />
+        <Contacts />
         <TheFooter />
     </div>
 </template>
@@ -12,14 +13,23 @@
 
 <script>
 import TheBanner from '../components/TheBanner.vue'
-import Activities from '../components/Activities.vue'
-import Projects from '../components/Projects.vue'
-import TheFooter from '../components/TheFooter.vue'
 import AboutMe from '../components/AboutMe.vue'
 import Competences from '../components/Competences.vue'
+import Projects from '../components/Projects.vue'
+import Activities from '../components/Activities.vue'
+import Contacts from '../components/Contacts.vue'
+import TheFooter from '../components/TheFooter.vue'
 
 export default{
-  components: {TheBanner, Activities, Projects, TheFooter, AboutMe, Competences},
+  components: {
+    TheBanner, 
+    AboutMe, 
+    Competences,
+    Projects, 
+    Activities,
+    Contacts, 
+    TheFooter 
+    },
     name:'Homepage',
     data(){
 
