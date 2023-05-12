@@ -61,7 +61,6 @@ $large-desktop: 1800px;
   }
   
   body, html {
-    overflow-x: hidden;
     font-family: "Poppins", sans-serif;
     color: $mainBlack;
   }
@@ -487,7 +486,12 @@ $large-desktop: 1800px;
     //about section
     .about{
       width: 100%;
-      margin-top: 150px;
+      margin: 7rem auto;
+
+      @include for-tablet-portrait-up(){
+        margin: 10rem auto 10rem auto;
+      }
+  
 
       &__title{
         display: flex;
@@ -767,7 +771,12 @@ $large-desktop: 1800px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
+    margin: 7rem auto;
+
+    @include for-tablet-portrait-up(){
+      margin: 10rem auto 10rem auto;
+    }
+
 
     & h1{
       font-size: 2rem;
@@ -895,13 +904,18 @@ $large-desktop: 1800px;
 
   .activity{
     width: 95%;
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin: 7rem auto;
+
+    @include for-tablet-portrait-up(){
+      margin: 10rem auto 10rem auto;
+    }
+
 
     & h1{
       @include titlesWidths();
@@ -968,6 +982,25 @@ $large-desktop: 1800px;
       background-color: #ffff;
       border: 3px solid $lightBlue;
       cursor: pointer;
+    }
+  }
+  
+  .contacts{
+    width: 95%;
+
+    margin: 7rem auto;
+
+    @include for-tablet-portrait-up(){
+      margin: 10rem auto 10rem auto;
+    }
+
+    
+
+    &__logos{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
     }
   }
 
