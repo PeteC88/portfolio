@@ -5,6 +5,7 @@ $ligthYellow: #f8d059;
 $fucsiaRed: #f92672;
 $greenYellow:#a6e32e;
 $lightGray:rgb(224, 224, 226);
+$yellowPostIt: #ffc;
 
 // medias
 $small-mobile: 350px;
@@ -62,6 +63,7 @@ $large-desktop: 1800px;
   body, html {
     overflow-x: hidden;
     font-family: "Poppins", sans-serif;
+    color: $mainBlack;
   }
 
   a{
@@ -398,13 +400,17 @@ $large-desktop: 1800px;
       /* bar on the right side of the parent div resize__container that needs to move it */
       &__right-side{
         position: absolute;
-        cursor: col-resize;
+        cursor: grab;
         z-index: 10;
         background-color:$lightBlue;
         height: 100%;
         right: 0;
         top: 0;
         width: 5px;
+
+        &--active{
+          cursor: grabbing;
+        }
       }
 
       &__arrows{
@@ -624,7 +630,7 @@ $large-desktop: 1800px;
 
     &__wrapper{
       width: 100%;
-      margin: auto;
+      margin: 5rem 0 5rem 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -761,8 +767,10 @@ $large-desktop: 1800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
 
     & h1{
+      font-size: 2rem;
       @include titlesWidths();
     }
 
@@ -889,6 +897,7 @@ $large-desktop: 1800px;
     width: 95%;
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -901,9 +910,64 @@ $large-desktop: 1800px;
     & h5{
       padding: 2rem 0 ;
     }
+    &__wrapper{
+      width: 100%;
+      margin: auto;
+    }
+
+    &__carousel{
+      width: 100%;
+      background-color: #4e95c9;
+      padding: 2rem;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    &__slide{
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      background:$yellowPostIt;
+      box-shadow: 0px 1px 5px 0px #656565;
+
+      & p {
+        font-weight: bold;
+      }
+      & ul li{
+        padding: 0.2rem 0;
+      }
+
+      &.slide-2{
+        position:absolute;
+
+        &.slide-2--active{
+          transition: all 1s ease-in-out;
+          transform:translateY(120%) ;
+        }
+
+        & h3{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+      }
+    }
 
     & p {
       padding:2rem;
+    }
+
+    & button {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      width: 200px;
+      font-size: 1rem;
+      background-color: #ffff;
+      border: 3px solid $lightBlue;
+      cursor: pointer;
     }
   }
 
