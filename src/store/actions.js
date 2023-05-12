@@ -125,7 +125,7 @@ export default{
     async getActivitiesAction({commit}){
          try{
             const data = await axios.get('https://www.boredapi.com/api/activity');
-            
+            console.log(data.data)
             commit('getActivitiesMutation', data.data)
          }
          catch(error){
