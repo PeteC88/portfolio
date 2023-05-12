@@ -6,10 +6,12 @@
             </button>
             <section class="menu-body" :class="isMenuBodyActive ? ['menu-body--active']: ''">
                 <nav class="menu-nav">
-                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">About </router-link></li>
-                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">Skills </router-link></li>
-                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">Projects </router-link></li>
-                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">API </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#home">Accueil</router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#about">Quelques lignes sur moi </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#skills">Compétences </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#projects">Projets </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#API">Moment API </router-link></li>
+                    <li class="menu-nav-link" :class="{'menu-nav-link--active': isMenuBodyActive}"><router-link to="#contacts">Contacts </router-link></li>
                 </nav>
             </section>
             <section class="menu-footer" :class="{'menu-footer--active':isMenuFooterActive}">
