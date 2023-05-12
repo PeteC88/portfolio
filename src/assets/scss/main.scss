@@ -206,12 +206,20 @@ $large-desktop: 1800px;
     .menu-nav{
       height: 100%;
       color: $lightGray;
-      font-size: 2rem;
+      font-size: 1.4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 2rem;
+
+      @include for-tablet-portrait-up(){
+        font-size: 1.6rem;
+      }
+
+      @include for-desktop-up(){
+        font-size: 2rem;
+      }
 
       &-link{
         transform: translateX(-100%);
@@ -221,10 +229,10 @@ $large-desktop: 1800px;
 
         &--active{
 
-          @for $i from 1 through 4 {
+          @for $i from 1 through 6 {
             &:nth-child(#{$i}){
               transform: translateX(0);
-              transition-delay: $i * (0.8s / 8);
+              transition-delay: $i * (1s / 12);
             }
           }
         }
