@@ -17,7 +17,7 @@
                     </ul>
                 </div>
               
-                <button><a @click.stop :href="siteLink">Visiter liste <font-awesome-icon :icon="['fas', 'eye']" /></a></button>
+                <button><a @click.stop :href="siteLink" target="_blank">Visiter liste <font-awesome-icon :icon="['fas', 'eye']" /></a></button>
             </div>
         </div>
         <div class="card__instruction">

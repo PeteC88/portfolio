@@ -19,7 +19,7 @@ export default createStore({
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack:'E-commerce site\'s page',
                     descriptionBack:'Projet pris sur le site frontendmentor.io',
-                    languagesUsed: ['HTML', 'CSS', 'SASS', 'JS'],
+                    languagesUsed: ['HTML', 'CSS', 'SASS', 'JavaScript'],
                     img:"projectECommerce.jpg",
                     link:"https://petec88.github.io/projects-frontend_mentor/",
                     isFlipped:false
@@ -30,7 +30,7 @@ export default createStore({
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack:'Countdown project',
                     descriptionBack:'Projet pris sur le site frontendmentor.io',
-                    languagesUsed: ['HTML', 'CSS', 'SASS', 'JS'],
+                    languagesUsed: ['HTML', 'CSS', 'SASS', 'JavaScript'],
                     img:"projectCountdown.png",
                     link:"https://petec88.github.io/countdown-frontend-mentor-challenge/",
                     isFlipped:false
@@ -41,7 +41,7 @@ export default createStore({
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack:'Rock Scissors Paper game',
                     descriptionBack:'Projet pris sur le site frontendmentor.io',
-                    languagesUsed: ['HTML', 'CSS', 'SASS', 'JS'],
+                    languagesUsed: ['HTML', 'CSS', 'SASS', 'JavaScript'],
                     img:"rockScissorsPaperGame.png",
                     link:"https://petec88.github.io/frontend-mentor-rock-paper-scissors-game/",
                     isFlipped:false
@@ -52,7 +52,7 @@ export default createStore({
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack:'Flag of the wordld',
                     descriptionBack:'Projet pris sur le site frontendmentor.io',
-                    languagesUsed: ['VUE.JS','HTML', 'CSS', 'SASS', 'JS'],
+                    languagesUsed: ['VUE.JS', 'HTML', 'CSS', 'SASS', 'JavaScript'],
                     img:"flagsProject.jpg",
                     link:"https://pietro-ciccarello-flags-project.netlify.app/home",
                     isFlipped:false

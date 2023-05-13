@@ -53,6 +53,10 @@ $large-desktop: 1800px;
   }
 }
 
+//anchor sections
+#about, #skills, #projects, #API, #contacts{
+  scroll-margin-top: 3.5rem;
+}
 
 *{
     margin:0;
@@ -63,7 +67,9 @@ $large-desktop: 1800px;
   body, html {
     font-family: "Poppins", sans-serif;
     color: $mainBlack;
+    scroll-behavior: smooth
   }
+
 
   a{
     text-decoration: none;
@@ -104,7 +110,7 @@ $large-desktop: 1800px;
 
     &__container{
         width:100%;
-        height: 2.5px;
+        height: 3px;
         background-color: $lightGray;
         margin: auto;
         border-radius: 5px;
@@ -114,8 +120,8 @@ $large-desktop: 1800px;
         &::after{
             content:"";
             display: block;
-            width:98%;
-            height: 2.5px;
+            width:100%;
+            height: 3px;
             border-radius: 5px;
             transform-origin: center;
             background-color: $lightGray;
@@ -155,7 +161,7 @@ $large-desktop: 1800px;
             }
 
             &::after{
-                transform: translateY(-2px) rotate(225deg);
+                transform: translateY(-3px) rotate(225deg);
                 
             }
         }
@@ -223,8 +229,9 @@ $large-desktop: 1800px;
 
       &-link{
         transform: translateX(-100%);
-        transition: all ease-in-out 0.7s;
+        transition: transform ease-in-out 0.7s;
         width: 100%;
+        
 
 
         &--active{
@@ -235,6 +242,19 @@ $large-desktop: 1800px;
               transition-delay: $i * (1s / 12);
             }
           }
+
+          & a {
+            display: block;
+            width:fit-content;
+            margin: auto;
+            cursor: pointer;
+
+            &:hover{
+              transform: scale(1.1);
+              color: $ligthYellow;  
+            }
+            
+          }
         }
       }
     }
@@ -244,7 +264,6 @@ $large-desktop: 1800px;
     .menu-footer{
       width: 100%;
       height: 25vh;
-      //background-color: rgb(164, 91, 2);
       background-color: $lightGray;
       transform: translateX(100%);
       transition: all ease-in-out 0.7s;
@@ -268,9 +287,10 @@ $large-desktop: 1800px;
 
         &-link{
           transform: scale(0);
-          transition: all  0.7s;
+          transition: transform  0.7s ease-in-out;
           font-size: 2.5rem;
           width: 2.5rem;
+          cursor: pointer;
 
 
           @include for-tablet-portrait-up(){
@@ -282,6 +302,11 @@ $large-desktop: 1800px;
               &:nth-child(#{$i}){
                 transform: scale(1);
                 transition-delay: $i * (2s / 16);
+
+                &:hover{
+                  transition: none;
+                  color: $lightBlue;
+                }
                 }
               }
             }
@@ -941,6 +966,10 @@ $large-desktop: 1800px;
 
     & h5{
       padding: 2rem 0 ;
+
+      @include for-tablet-portrait-up(){
+        font-size: 1.2rem;
+      }
     }
     &__wrapper{
       width: 100%;
