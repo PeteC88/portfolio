@@ -93,11 +93,14 @@
             :class="{ 'menu-footer-nav-link--active': isMenuFooterActive }"
             class="menu-footer-nav-link"
           >
-            <font-awesome-icon
-              :icon="['fas', 'file-arrow-down']"
-              class="menu-footer-icon"
+            <a
+              :href="`${publicPath}CVPietroCiccarello.pdf`"
+              download="CV Pietro Ciccarello"
+              target="_blank"
               :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
-            />
+            >
+              <ResumeLogoSvg class="resume-icon" />
+            </a>
           </li>
         </nav>
       </section>
@@ -105,7 +108,12 @@
   </section>
 </template>
 <script>
+import { mapGetters, mapState } from "vuex";
+import ResumeLogoSvg from "./ResumeLogoSvg.vue";
 export default {
+  components: {
+    ResumeLogoSvg,
+  },
   data() {
     return {
       isMenuOn: false,
@@ -117,6 +125,10 @@ export default {
       lastScrollPosition: 0,
       scrollOffset: 40,
     };
+  },
+  computed: {
+    ...mapGetters(["resumeImage"]),
+    ...mapState(["publicPath"]),
   },
   watch: {
     isMenuOn() {

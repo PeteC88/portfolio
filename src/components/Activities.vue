@@ -58,9 +58,6 @@ export default {
     slideAnimation() {
       this.isSliding = true;
 
-      /*  this.getActivity();
-            this.oldActivity = this.activity.activity;
- */
       setTimeout(() => {
         this.getActivity();
         this.oldActivity = this.activity;

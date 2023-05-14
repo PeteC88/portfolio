@@ -1,19 +1,19 @@
 <template>
   <TheMenu />
-  <HomePage/>
+  <HomePage />
 </template>
 
 <script>
-import HomePage from './pages/HomePage';
-import TheMenu from './components/TheMenu.vue'
+import HomePage from "./pages/HomePage";
+import TheMenu from "./components/TheMenu.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HomePage,
-    TheMenu
-  }
-}
+    TheMenu,
+  },
+};
 </script>
 
 <style>

@@ -14,14 +14,12 @@
       </div>
       <div class="about__text">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc in massa
-          ante. Nunc eu turpis vel sem condimentum varius. Nulla posuere, diam
-          porta accumsan maximus, dui lorem tristique neque, a eleifend urna
-          lorem sed nibh. Pellentesque habitant morbi tristique senectus et
-          netus et malesuada fames ac turpis egestas. Maecenas at vulputate
-          justo. Donec sit amet congue diam. Donec eget sapien ipsum. Etiam
-          tempor aliquet tortor, eget tristique est accumsan id. Nulla egestas
-          ante eget sollicitudin pulvinar.
+          Je suis Pietro, je suis développeur web et webmaster. Je suis
+          passionné par le développement et surtout par le côté front. Je suis
+          curieux et j'aime acquerir des nouvelles compétences que je peux
+          utiliser dans mes projets. Plus en général me passions sont surtout la
+          technologie, les langues étrangeres, la musique, les voyages et les
+          jeux vidéo.
         </p>
       </div>
     </div>

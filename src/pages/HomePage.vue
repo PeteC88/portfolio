@@ -34,6 +34,5 @@ export default {
     TheFooter,
   },
   name: "Homepage",
-  data() {},
 };
 </script>
