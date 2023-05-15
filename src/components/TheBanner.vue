@@ -5,8 +5,8 @@
         <div
           class="resize__right-side"
           :class="{ 'resize__right-side--active': isGrabbing }"
-          @mousedown="mouseDownHandler"
-          @touchstart="mouseDownHandler"
+          @mousedown.prevent="mouseDownHandler"
+          @touchstart.prevent="mouseDownHandler"
         >
           <div class="resize__arrows">
             <div class="resize__arrows-text">déplace moi</div>
