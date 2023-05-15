@@ -914,7 +914,18 @@ $large-desktop: 1800px;
           padding:1rem 0 0.5rem 0;
 
           & li {
-            padding: 0.5rem;
+
+            @include for-tablet-portrait-up(){
+              padding: 0.2rem;
+            }
+
+            @include for-tablet-landscape-up(){
+              padding: 0.3rem;
+            }
+
+            @include for-desktop-up(){
+              padding: 0.4rem;
+            }
           }
         }
 
