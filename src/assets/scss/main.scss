@@ -204,7 +204,8 @@ $large-desktop: 1800px;
     }
     .menu-body{
       width: 100%;
-      height: calc(65vh - 50px);
+      max-height: calc(65vh - 50px);
+      max-height: fill-available;
       //background-color: rgb(52, 29, 0);
       background-color: $lightBlue;
       transform: translateX(-100%);
@@ -280,7 +281,8 @@ $large-desktop: 1800px;
 
     .menu-footer{
       width: 100%;
-      height: 35vh;
+      max-height: 35vh;
+      max-height: fill-available;
       background-color: $lightGray;
       transform: translateX(100%);
       transition: all ease-in-out 0.7s;
