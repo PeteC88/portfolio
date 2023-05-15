@@ -72,21 +72,12 @@ $large-desktop: 1800px;
     padding:0;
     box-sizing: border-box;
   }
-  html{
-    height: -webkit-fill-available;
-  }
-  /* Avoid Chrome to see Safari hack for height 100vh*/
-  @supports (-webkit-touch-callout: none) {
-  body {
-    /* The hack for Safari */
-    min-height: -webkit-fill-available;
-  }
-}
+  
   body, html {
     font-family: "Poppins", sans-serif;
     color: $mainBlack;
     scroll-behavior: smooth;
-    min-height: 100vh;
+    height: 100%;
   }
 
 
