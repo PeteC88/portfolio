@@ -32,7 +32,7 @@
             class="menu-nav-link"
             :class="{ 'menu-nav-link--active': isMenuBodyActive }"
           >
-            <a href="#skills" @click="toggleMenu">Compétences </a>
+            <a href="#compétences" @click="toggleMenu">Compétences </a>
           </li>
           <li
             class="menu-nav-link"

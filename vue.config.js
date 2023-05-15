@@ -7,5 +7,6 @@ module.exports = {
       .options({
         name: '[name].[ext]'
       })
-  }
+  },
+
 }

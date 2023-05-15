@@ -1,5 +1,5 @@
 <template>
-  <div class="competences" id="skills">
+  <div class="competences" id="compétences">
     <h1 class="competences__title">Mes compétences</h1>
     <AnimatedCube />
     <section class="competences__wrapper">

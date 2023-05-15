@@ -1,4 +1,4 @@
-# portfolio
+# Pietro Ciccarello - portfolio
 
 ## Project setup
 ```
