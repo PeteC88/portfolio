@@ -210,9 +210,6 @@ $large-desktop: 1800px;
       transform: translateX(-100%);
       transition: all ease-in-out 0.7s;
 
-      @include for-desktop-up(){
-        height: calc(75vh - 50px);
-      }
       &--active{
         transform: translateX(0);
       }
@@ -285,9 +282,6 @@ $large-desktop: 1800px;
       transition: all ease-in-out 0.7s;
       margin:auto;
 
-      @include for-desktop-up(){
-        height: 25vh;
-      }
       &--active{
         transform: translateX(0);
       }
