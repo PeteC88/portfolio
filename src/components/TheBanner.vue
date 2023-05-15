@@ -6,7 +6,7 @@
           class="resize__right-side"
           :class="{ 'resize__right-side--active': isGrabbing }"
           @mousedown.prevent="mouseDownHandler"
-          @touchstart.prevent="mouseDownHandler"
+          @touchstart="touchStartHandler"
         >
           <div class="resize__arrows">
             <div class="resize__arrows-text">déplace moi</div>
@@ -58,8 +58,11 @@ export default {
     return {
       resizeBar: this.$refs.resizeBar,
       x: 0,
+      touchX: 0,
       w: 0,
+      touchW: 0,
       dx: 0,
+      dxTouch: 0,
       percentageWidth: 0,
       isGrabbing: false,
     };
@@ -75,10 +78,28 @@ export default {
     });
   },
   methods: {
+    touchStartHandler(e) {
+      this.isGrabbing = true;
+      //get current position of the mouse
+
+      this.touchX = e.touches[0].clientX;
+
+      const resizeContainer = document.getElementById("resizeMe");
+
+      //calculate the dimension of the div
+      const styles = window.getComputedStyle(resizeContainer);
+
+      this.w = parseInt(styles.width, 10);
+
+      //attach the listner to the document
+      document.addEventListener("touchmove", this.mouseMoveHandler);
+      document.addEventListener("touchend", this.mouseUpHandler);
+    },
     mouseDownHandler(e) {
       this.isGrabbing = true;
 
       //get current position of the mouse
+
       this.x = e.clientX;
 
       const resizeContainer = document.getElementById("resizeMe");
@@ -90,9 +111,19 @@ export default {
 
       //attach the listner to the document
       document.addEventListener("mousemove", this.mouseMoveHandler);
-      document.addEventListener("touchmove", this.mouseMoveHandler);
+      document.addEventListener("touchmove", this.touchMoveHandler);
       document.addEventListener("mouseup", this.mouseUpHandler);
       document.addEventListener("touchend", this.mouseUpHandler);
+    },
+    touchMoveHandler(e) {
+      const resizeContainer = document.getElementById("resizeMe");
+
+      this.getPercentageBanner();
+      //calculate till where the div can be moved
+      this.dxTouch = e.touches[0].clientX - this.touchX;
+
+      //adjust the dimension of the element
+      resizeContainer.style.width = `${this.touchW + this.dxTouch}px`;
     },
     mouseMoveHandler(e) {
       const resizeContainer = document.getElementById("resizeMe");
@@ -104,12 +135,15 @@ export default {
       //adjust the dimension of the element
       resizeContainer.style.width = `${this.w + this.dx}px`;
     },
+    touchEndHandler() {
+      this.isGrabbing = false;
+      document.removeEventListener("touchmove", this.touchMoveHandler);
+      document.removeEventListener("touchend", this.touchEndHandler);
+    },
     mouseUpHandler() {
       this.isGrabbing = false;
       document.removeEventListener("mousemove", this.mouseMoveHandler);
-      document.addEventListener("touchmove", this.mouseMoveHandler);
       document.removeEventListener("mouseup", this.mouseUpHandler);
-      document.addEventListener("touchend", this.mouseUpHandler);
     },
     getPercentageBanner() {
       const resizeContainer = document.getElementById("resizeMe");
