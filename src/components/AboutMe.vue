@@ -14,12 +14,12 @@
       </div>
       <div class="about__text">
         <p>
-          Je suis Pietro, je suis développeur web et webmaster. Je suis
-          passionné par le développement et surtout par le côté front. Je suis
-          curieux et j'aime acquerir des nouvelles compétences que je peux
-          utiliser dans mes projets. Plus en général me passions sont surtout la
-          technologie, les langues étrangeres, la musique, les voyages et les
-          jeux vidéo.
+          Je m'appelle Pietro, je suis développeur web et webmaster. Passionné
+          par le développement et surtout par le côté front, je suis aussi très
+          curieux et j'aime acquérir de nouvelles compétences que je peux
+          utiliser dans mes projets. Plus généralement, mes passions sont
+          surtout la technologie, les langues étrangères, la musique, les
+          voyages et les jeux vidéo.
         </p>
       </div>
     </div>

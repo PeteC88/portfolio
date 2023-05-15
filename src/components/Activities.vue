@@ -2,7 +2,7 @@
   <div class="activity" id="API">
     <h1>Moment API</h1>
     <h5>
-      Que serait un développeur sans les API? Si tu cherches une activité à
+      Que serait un développeur sans les API ? Si tu cherches une activité à
       faire, prends inspiration en cliquant sur le bouton en bas.
     </h5>
     <div class="activity__wrapper">
@@ -11,8 +11,8 @@
           <p>{{ activity.activity }}</p>
           <ul>
             <li>prix : {{ activity.price }}</li>
-            <li>participants : {{ activity.participants }}</li>
-            <li>type: {{ activity.type }}</li>
+            <li>participant&#40;s&#41; : {{ activity.participants }}</li>
+            <li>type : {{ activity.type }}</li>
           </ul>
         </div>
         <div
@@ -23,8 +23,8 @@
             <p>{{ oldActivity.activity }}</p>
             <ul>
               <li>prix : {{ oldActivity.price }}</li>
-              <li>participants : {{ oldActivity.participants }}</li>
-              <li>type: {{ oldActivity.type }}</li>
+              <li>participant&#40;s&#41; : {{ oldActivity.participants }}</li>
+              <li>type : {{ oldActivity.type }}</li>
             </ul>
           </div>
           <h3 v-else>Pick one activity</h3>

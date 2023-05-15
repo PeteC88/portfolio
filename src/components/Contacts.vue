@@ -31,7 +31,7 @@
           target="_blank"
         >
           <ResumeLogoSvg class="resume-icon" />
-          <p>Télecharge mon CV</p>
+          <p>Télécharge mon CV</p>
         </a>
       </div>
     </div>
