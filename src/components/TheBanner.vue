@@ -6,6 +6,7 @@
           class="resize__right-side"
           :class="{ 'resize__right-side--active': isGrabbing }"
           @mousedown="mouseDownHandler"
+          @touchstart="mouseDownHandler"
         >
           <div class="resize__arrows">
             <div class="resize__arrows-text">déplace moi</div>
@@ -89,7 +90,9 @@ export default {
 
       //attach the listner to the document
       document.addEventListener("mousemove", this.mouseMoveHandler);
+      document.addEventListener("touchmove", this.mouseMoveHandler);
       document.addEventListener("mouseup", this.mouseUpHandler);
+      document.addEventListener("touchend", this.mouseUpHandler);
     },
     mouseMoveHandler(e) {
       const resizeContainer = document.getElementById("resizeMe");
@@ -104,7 +107,9 @@ export default {
     mouseUpHandler() {
       this.isGrabbing = false;
       document.removeEventListener("mousemove", this.mouseMoveHandler);
+      document.addEventListener("touchmove", this.mouseMoveHandler);
       document.removeEventListener("mouseup", this.mouseUpHandler);
+      document.addEventListener("touchend", this.mouseUpHandler);
     },
     getPercentageBanner() {
       const resizeContainer = document.getElementById("resizeMe");
