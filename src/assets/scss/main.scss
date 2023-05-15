@@ -297,23 +297,29 @@ $large-desktop: 1800px;
             width: 4rem;
             font-size: 4rem;
           }
-          &--active{
-            & a {
+          
+          & a{
               position: relative;
               display: flex;
               width: 100%;
               align-items:center;
 
-              top: -3px;
-
-              @include for-tablet-portrait-up(){
+               @include for-tablet-portrait-up(){
                 width: 62px;
               }
 
-              & svg{
-                width: 100%;
-                fill:currentColor;
+            & svg {
+              width: 100%;
+              fill:currentColor;
+            }
+          }
 
+         
+
+          &--active{
+            & a {
+
+              & svg{
                 &:hover{
                   fill: $lightBlue;
                 }
