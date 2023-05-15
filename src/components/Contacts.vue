@@ -49,8 +49,5 @@ export default {
     ...mapState(["publicPath"]),
     ...mapGetters(["resumeImage"]),
   },
-  mounted() {
-    console.log(this.publicPath);
-  },
 };
 </script>

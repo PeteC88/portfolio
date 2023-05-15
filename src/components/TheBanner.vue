@@ -6,7 +6,7 @@
           class="resize__right-side"
           :class="{ 'resize__right-side--active': isGrabbing }"
           @mousedown.prevent="mouseDownHandler"
-          @touchstart="touchStartHandler"
+          @touchstart.prevent="touchStartHandler"
         >
           <div class="resize__arrows">
             <div class="resize__arrows-text">déplace moi</div>
@@ -82,7 +82,7 @@ export default {
       this.isGrabbing = true;
       //get current position of the mouse
 
-      this.touchX = e.touches[0].clientX;
+      this.touchX = e.touches[0].pageX;
 
       const resizeContainer = document.getElementById("resizeMe");
 
@@ -92,8 +92,10 @@ export default {
       this.w = parseInt(styles.width, 10);
 
       //attach the listner to the document
-      document.addEventListener("touchmove", this.mouseMoveHandler);
-      document.addEventListener("touchend", this.mouseUpHandler);
+      document.addEventListener("touchmove", this.touchMoveHandler, {
+        passive: false,
+      });
+      document.addEventListener("touchend", this.touchEndHandler);
     },
     mouseDownHandler(e) {
       this.isGrabbing = true;
@@ -111,17 +113,16 @@ export default {
 
       //attach the listner to the document
       document.addEventListener("mousemove", this.mouseMoveHandler);
-      document.addEventListener("touchmove", this.touchMoveHandler);
       document.addEventListener("mouseup", this.mouseUpHandler);
-      document.addEventListener("touchend", this.mouseUpHandler);
     },
     touchMoveHandler(e) {
+      e.preventDefault();
+
       const resizeContainer = document.getElementById("resizeMe");
 
       this.getPercentageBanner();
       //calculate till where the div can be moved
-      this.dxTouch = e.touches[0].clientX - this.touchX;
-
+      this.dxTouch = e.touches[0].pageX - this.touchX;
       //adjust the dimension of the element
       resizeContainer.style.width = `${this.touchW + this.dxTouch}px`;
     },
@@ -137,7 +138,9 @@ export default {
     },
     touchEndHandler() {
       this.isGrabbing = false;
-      document.removeEventListener("touchmove", this.touchMoveHandler);
+      document.removeEventListener("touchmove", this.touchMoveHandler, {
+        passive: true,
+      });
       document.removeEventListener("touchend", this.touchEndHandler);
     },
     mouseUpHandler() {
