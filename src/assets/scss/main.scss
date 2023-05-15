@@ -14,11 +14,20 @@ $tablet-landscape: 900px;
 $desktop: 1200px;
 $large-desktop: 1800px;
 
+@mixin for-mobile-landscape{
+  @media (max-width: $tablet-landscape) and (max-height: $tablet-portrait) {
+    @content; 
+   }
+}
+
+
 @mixin for-small-mobile-down{
   @media (max-width: $small-mobile) {
     @content; 
    }
 }
+
+
 @mixin for-tablet-portrait-up {
   @media (min-width: $tablet-portrait) {
      @content; 
@@ -218,6 +227,12 @@ $large-desktop: 1800px;
       justify-content: center;
       align-items: center;
       gap: 2rem;
+
+
+      @include for-mobile-landscape(){
+        font-size: 1.1rem;
+        gap: 0;
+      }
 
       @include for-tablet-portrait-up(){
         font-size: 1.6rem;
