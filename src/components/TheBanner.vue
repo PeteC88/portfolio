@@ -82,7 +82,7 @@ export default {
       this.isGrabbing = true;
       //get current position of the mouse
 
-      this.touchX = e.touches[0].pageX;
+      this.touchX = e.touches[0].clientX;
 
       const resizeContainer = document.getElementById("resizeMe");
 
@@ -120,9 +120,11 @@ export default {
 
       const resizeContainer = document.getElementById("resizeMe");
 
+      this.touchX = 0;
+
       this.getPercentageBanner();
       //calculate till where the div can be moved
-      this.dxTouch = e.touches[0].pageX - this.touchX;
+      this.dxTouch = e.touches[0].clientX - this.touchX;
       //adjust the dimension of the element
       resizeContainer.style.width = `${this.touchW + this.dxTouch}px`;
     },
