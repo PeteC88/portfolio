@@ -10,7 +10,7 @@
     </div>
     <div class="about__wrapper">
       <div class="about__photo">
-        <img src="../assets/imgs/about-me/photo-Pietro-Ciccarello.jpg" alt="" />
+        <img src="../assets/imgs/about-me/photo-Pietro-Ciccarello.jpg" alt="photo Pietro Ciccarello" />
       </div>
       <div class="about__text">
         <p>
