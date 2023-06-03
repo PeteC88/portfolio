@@ -701,8 +701,9 @@ $large-desktop: 1800px;
           padding: 1.5rem;
           padding-bottom: 3.5rem;
 
-          @include for-desktop-up(){
 
+          @include for-desktop-up(){
+            padding-bottom:2rem;
             width: 50%;
             margin-right: 12%;
           }
