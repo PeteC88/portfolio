@@ -211,7 +211,7 @@ $large-desktop: 1800px;
       transition: all ease-in-out 0.7s;
 
       @include for-mobile-landscape(){
-        height: calc(75dvh - 50px);
+        height: calc(80dvh - 50px);
       }
 
       &--active{
@@ -287,7 +287,7 @@ $large-desktop: 1800px;
       margin:auto;
 
       @include for-mobile-landscape(){
-        height: 25dvh;
+        height: 20dvh;
       }
 
       &--active{
@@ -313,12 +313,17 @@ $large-desktop: 1800px;
           width: 2.5rem;
           cursor: pointer;
 
-
           @include for-tablet-portrait-up(){
             width: 4rem;
             font-size: 4rem;
           }
           
+          & svg{
+            @include for-mobile-landscape(){
+                width:35px;
+            }
+          }
+
           & a{
               position: relative;
               display: flex;
@@ -332,6 +337,10 @@ $large-desktop: 1800px;
             & svg {
               width: 100%;
               fill:currentColor;
+
+               @include for-mobile-landscape(){
+                width:35px;
+              }
             }
           }
 
