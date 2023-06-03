@@ -63,31 +63,40 @@
             :class="{ 'menu-footer-nav-link--active': isMenuFooterActive }"
             class="menu-footer-nav-link"
           >
-            <font-awesome-icon
-              :icon="['fab', 'linkedin']"
-              class="menu-footer-icon"
-              :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
-            />
+            <a
+              href="https://fr.linkedin.com/in/pietro-ciccarello"
+              target="_blank"
+            >
+              <font-awesome-icon
+                :icon="['fab', 'linkedin']"
+                class="menu-footer-icon"
+                :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
+              />
+            </a>
           </li>
           <li
             :class="{ 'menu-footer-nav-link--active': isMenuFooterActive }"
             class="menu-footer-nav-link"
           >
-            <font-awesome-icon
-              :icon="['fas', 'envelope']"
-              class="menu-footer-icon"
-              :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
-            />
+            <a href="mailto:pietrociccarello@gmail.com">
+              <font-awesome-icon
+                :icon="['fas', 'envelope']"
+                class="menu-footer-icon"
+                :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
+              />
+            </a>
           </li>
           <li
             :class="{ 'menu-footer-nav-link--active': isMenuFooterActive }"
             class="menu-footer-nav-link"
           >
-            <font-awesome-icon
-              :icon="['fab', 'github']"
-              class="menu-footer-icon"
-              :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
-            />
+            <a href="https://github.com/PeteC88" target="_blank">
+              <font-awesome-icon
+                :icon="['fab', 'github']"
+                class="menu-footer-icon"
+                :class="{ 'menu-footer-icon--active': isMenuBodyActive }"
+              />
+            </a>
           </li>
           <li
             :class="{ 'menu-footer-nav-link--active': isMenuFooterActive }"
