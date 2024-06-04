@@ -53,7 +53,7 @@ export default createStore({
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack: 'Flag of the wordld',
                     descriptionBack: 'Projet pris sur le site frontendmentor.io',
-                    languagesUsed: ['VUE.JS', 'HTML', 'CSS', 'SASS', 'JavaScript'],
+                    languagesUsed: ['VUE.JS with Vuex', 'HTML', 'CSS', 'SASS', 'JavaScript'],
                     img: "flagsProject.jpg",
                     link: "https://pietro-ciccarello-flags-project.netlify.app/home",
                     isFlipped: false
@@ -64,11 +64,22 @@ export default createStore({
                     descriptionFront: 'Projet pris sur le site frontendmentor.io',
                     titleBack: 'URL-Shortner',
                     descriptionBack: 'Projet pris sur le site frontendmentor.io',
-                    languagesUsed: ['VUE.JS', 'HTML', 'CSS', 'SASS', 'JavaScript'],
+                    languagesUsed: ['VUE.JS with Vuex', 'HTML', 'CSS', 'SASS', 'JavaScript'],
                     img: "urlShortner.png",
                     link: "https://url-shortener-pietro-ciccarello.netlify.app/",
                     isFlipped: false
                 },
+                {
+                    id: 6,
+                    titleFront: 'Multi-step form',
+                    descriptionFront: 'Projet pris sur le site frontendmentor.io',
+                    titleBack: 'Multi-step form',
+                    descriptionBack: 'Projet pris sur le site frontendmentor.io',
+                    languagesUsed: ['VUE.JS with Pinia', 'HTML', 'CSS', 'SASS', 'Typescript'],
+                    img: "multistep-project.png",
+                    link: "https://multistep-form-pietro-ciccarello.netlify.app",
+                    isFlipped: false
+                }
             ]
         }
     },
