@@ -124,7 +124,7 @@ export default {
     },
     async getActivitiesAction({ commit }) {
         try {
-            const data = await axios.get('https://www.boredapi.com/api/activity');
+            const data = await axios.get('https://bored.api.lewagon.com/api/activity');
             commit('getActivitiesMutation', data.data)
         }
         catch (error) {
